@@ -1,24 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { productsData } from '../data/products';
-import { useAppContext } from '../context/AppContext';
+import { useAppContext } from '../hooks/useAppContext';
 
 const ProductDetail = () => {
   const { id } = useParams();
   const product = productsData.find(p => p.id === id);
   const { addToCart } = useAppContext();
 
-  const [mainImg, setMainImg] = useState('');
-  const [imgError, setImgError] = useState(false);
+  const [mainImg, setMainImg] = useState(product?.img || '');
   const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
-    if (product) {
+    if (product && mainImg !== product.img) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setMainImg(product.img);
-      setImgError(false);
-      window.scrollTo(0, 0);
     }
-  }, [product]);
+    window.scrollTo(0, 0);
+  }, [product, mainImg]);
 
   if (!product) {
     return (

@@ -1,0 +1,73 @@
+﻿
+> electro-elhanafi@0.0.0 lint
+> eslint .
+
+
+C:\Users\hp\.agent\electro-elhanafi\src\App.jsx
+  19:34  error  'children' is missing in props validation  react/prop-types
+
+C:\Users\hp\.agent\electro-elhanafi\src\components\HeroVideo.jsx
+  3:19  error  Component definition is missing display name  react/display-name
+
+C:\Users\hp\.agent\electro-elhanafi\src\components\common\WhatsAppButton.jsx
+  3:27  error  'text' is missing in props validation            react/prop-types
+  3:33  error  'styleClass' is missing in props validation      react/prop-types
+  3:45  error  'variant' is missing in props validation         react/prop-types
+  3:65  error  'initialMessage' is missing in props validation  react/prop-types
+
+C:\Users\hp\.agent\electro-elhanafi\src\components\layout\CartDrawer.jsx
+  6:23  error  'isOpen' is missing in props validation   react/prop-types
+  6:31  error  'onClose' is missing in props validation  react/prop-types
+
+C:\Users\hp\.agent\electro-elhanafi\src\components\layout\Navbar.jsx
+  190:28   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  350:166  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\hp\.agent\electro-elhanafi\src\context\AppContext.jsx
+    5:31  error  'children' is missing in props validation                                                                                       react/prop-types
+  119:14  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+C:\Users\hp\.agent\electro-elhanafi\src\pages\Accessoires.jsx
+   5:30  error  'src' is missing in props validation                             react/prop-types
+   5:35  error  'alt' is missing in props validation                             react/prop-types
+  30:26  error  'product' is missing in props validation                         react/prop-types
+  39:45  error  'product.name' is missing in props validation                    react/prop-types
+  87:18  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\hp\.agent\electro-elhanafi\src\pages\Accueil.jsx
+   30:16   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   51:92   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   51:125  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  234:22   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\hp\.agent\electro-elhanafi\src\pages\Boutique.jsx
+  7:24  error  'src' is missing in props validation   react/prop-types
+  7:29  error  'name' is missing in props validation  react/prop-types
+
+C:\Users\hp\.agent\electro-elhanafi\src\pages\Contact.jsx
+   30:77  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  127:36  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\hp\.agent\electro-elhanafi\src\pages\ProductDetail.jsx
+  16:7  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  14 |   useEffect(() => {
+  15 |     if (product) {
+> 16 |       setMainImg(product.img);
+     |       ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  17 |       window.scrollTo(0, 0);
+  18 |     }
+  19 |   }, [product]);  react-hooks/set-state-in-effect
+
+C:\Users\hp\.agent\electro-elhanafi\src\pages\Promotions.jsx
+  121:84  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  278:16  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+Ô£û 28 problems (28 errors, 0 warnings)
+

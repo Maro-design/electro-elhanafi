@@ -1,6 +1,5 @@
-import React, { createContext, useState, useContext, useEffect } from 'react';
-
-const AppContext = createContext();
+import React, { useState } from 'react';
+import { AppContext } from './AppContextObject';
 
 export const AppProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
@@ -116,4 +115,3 @@ export const AppProvider = ({ children }) => {
   );
 };
 
-export const useAppContext = () => useContext(AppContext);

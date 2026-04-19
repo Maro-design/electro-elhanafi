@@ -1,5 +1,4 @@
 import { useEffect, useRef, memo } from 'react';
-import Hls from 'hls.js';
 
 const HeroVideo = memo(() => {
   const videoRef = useRef(null);
@@ -10,14 +9,19 @@ const HeroVideo = memo(() => {
     
     const src = 'https://stream.mux.com/9JXDljEVWYwWu01PUkAemafDugK89o01BR6zqJ3aS9u00A.m3u8';
     
-    if (Hls.isSupported()) {
-      const hls = new Hls();
-      hls.loadSource(src);
-      hls.attachMedia(video);
-      return () => hls.destroy();
-    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-      video.src = src;
-    }
+    const initHls = async () => {
+      const Hls = (await import('hls.js')).default;
+      if (Hls.isSupported()) {
+        const hls = new Hls();
+        hls.loadSource(src);
+        hls.attachMedia(video);
+        return () => hls.destroy();
+      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = src;
+      }
+    };
+    
+    initHls();
   }, []);
 
   return (

@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Search, User, ShoppingCart, X, Menu } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useAppContext } from '../../context/AppContext';
+import { useAppContext } from '../../hooks/useAppContext';
 import CartDrawer from './CartDrawer';
 
 const Navbar = () => {

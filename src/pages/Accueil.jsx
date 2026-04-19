@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAppContext } from '../context/AppContext';
+import { useAppContext } from '../hooks/useAppContext';
 import HeroVideo from '../components/HeroVideo';
 
 const Accueil = () => {

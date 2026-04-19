@@ -12,5 +12,13 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/gsmarena/, '')
       }
     }
+  },
+  build: {
+    rollupOptions: {
+      onwarn(warning, warn) {
+        if (warning.code === 'UNUSED_EXTERNAL_IMPORT') return;
+        warn(warning);
+      }
+    }
   }
 })

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ShoppingCart, Trash2, Plus, Minus } from 'lucide-react';
-import { useAppContext } from '../../context/AppContext';
+import { useAppContext } from '../../hooks/useAppContext';
 
 const CartDrawer = ({ isOpen, onClose }) => {
   const { cart, removeFromCart, updateQuantity, cartTotal } = useAppContext();

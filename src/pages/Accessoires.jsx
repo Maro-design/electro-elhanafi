@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { useAppContext } from '../context/AppContext';
+import { useAppContext } from '../hooks/useAppContext';
 
-const ImageWithFallback = ({ src, alt, productName }) => {
+const ImageWithFallback = ({ src, alt }) => {
   return (
     <div style={{ background: '#0a0a0a', padding: '16px', height: '260px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <img 

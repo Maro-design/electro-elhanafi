@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { productsData } from '../data/products';
-import { useAppContext } from '../context/AppContext';
+import { useAppContext } from '../hooks/useAppContext';
 
 const IPhoneImage = ({ src, name }) => {
   return (
